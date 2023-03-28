@@ -39,6 +39,7 @@ public class StatsService {
         }
         return minMonth + 1; // месяца нумеруются с 1, а индексы массива с 0, нужно сдвинуть ответ на 1
     }
+
     //5. Количество месяцев, в которых продажи были ниже среднего.
     public int countMonthMin(int[] sales) {
         int average = AverageAmount(sales); //средняя сумма продаж
@@ -53,17 +54,17 @@ public class StatsService {
     }
 
     //6.Количество месяцев, в которых продажи были выше среднего
-public int countMonthMax (int [] sales){
-    int average = AverageAmount (sales); //средняя сумма продаж
-    int countMonth = 0; // количество месяцев
+    public int countMonthMax(int[] sales) {
+        int average = AverageAmount(sales); //средняя сумма продаж
+        int countMonth = 0; // количество месяцев
 
-    for (int i = 0; i < sales.length; i++) {
-        if (sales[i] > average) { //продажи от каждого числа в массиве меньше среднего
-            countMonth++; //количество месяцев
+        for (int i = 0; i < sales.length; i++) {
+            if (sales[i] > average) { //продажи от каждого числа в массиве меньше среднего
+                countMonth++; //количество месяцев
+            }
         }
+        return countMonth;
     }
-    return countMonth;
-}
 }
 
 
